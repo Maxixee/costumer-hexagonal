@@ -1,6 +1,7 @@
 package com.hiego.hexagonal.adapters.in.controller.mapper;
 
 import com.hiego.hexagonal.adapters.in.controller.Request.CostumerRequest;
+import com.hiego.hexagonal.adapters.in.controller.response.CostumerResponse;
 import com.hiego.hexagonal.application.core.domain.Costumer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,4 +13,6 @@ public interface CostumerMapper {
     @Mapping(target = "address", ignore = true)
     @Mapping(target = "isValidCpf", ignore = true)
     Costumer toCostumer(CostumerRequest costumerRequest);
+
+    CostumerResponse toCostumerResponse(Costumer costumer);
 }
